@@ -1,0 +1,23 @@
+{
+    "type": "postgres",
+    "schema": "public",
+    "name": "owner",
+    "engine": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "Matteo",
+    "database": "searchy",
+    "synchronize": false,
+    "migrationsTableName": "migrations",
+    "entities": [
+       "src/**/models/**/*{.ts,.js}"
+    ],
+    "migrations": [
+       "src/migrations/**/*{.ts,.js}"
+    ],
+    "cli": {
+        "entitiesDir": "src/models",
+        "migrationsDir": "src/migrations"
+      }
+ }

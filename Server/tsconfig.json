@@ -25,7 +25,7 @@
     "include": [
         "./src/**/*",
         "tests/testApp.ts"
-    ],
+, "config/config.js"    ],
     "exclude": [
         "./node_modules",
         "./tests",
