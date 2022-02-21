@@ -5,9 +5,9 @@ import ProductService from '../services/product.service';
 const route = PromiseRouter();
 
 export const ProductController = (app: Router): void => {
-  app.use('/v1/product', route);
+  app.use('/v1', route);
 
-  route.get('/', async (req: Request, res: Response) => {
+  route.get('/product', async (req: Request, res: Response) => {
     const productTitle = req.query && req.query.title ? (req.query.title as string) : '';
     const productService = new ProductService();
     const products = await productService.getProducts(productTitle);

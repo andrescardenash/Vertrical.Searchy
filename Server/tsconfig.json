@@ -17,5 +17,6 @@
     "esModuleInterop": true
   },
   "include": ["./src/**/*", "tests/testApp.ts", "config/config.js"],
+  //comment this line to avoid visual errors in the unit tests.
   "exclude": ["./node_modules", "./tests", "./**/__tests__/*", "./**/__mocks__/*"]
 }

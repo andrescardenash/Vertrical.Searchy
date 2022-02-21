@@ -1,23 +1,12 @@
 import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
 import { connectToDatabase } from './config/database/dbClient';
-import { routes } from './controllers';
+import applyServerConfig from './config/server';
 
 function startServer() {
-  dotenv.config();
   connectToDatabase()
     .then(async () => {
       const app = express();
-
-      app.use(
-        cors({
-          credentials: true,
-          origin: process.env.ACCESS_CONTROL_ALLOW_ORIGIN,
-        })
-      );
-
-      app.use(routes());
+      applyServerConfig(app);
 
       app
         .listen(process.env.PORT, () => {
