@@ -6,12 +6,15 @@ import { Response } from 'superagent';
 const app = express();
 applyServerConfig(app);
 const httpRequest = request(app);
-
+let endpoint: string;
 let mockProductService: { getProducts: jest.Mock<any, any> };
+
 jest.mock('../../services/product.service.ts', () => jest.fn().mockImplementation(() => mockProductService));
 
-describe('/v1/product', () => {
+describe('/v1/products', () => {
   beforeAll(() => {
+    endpoint = '/v1/products';
+
     mockProductService = {
       getProducts: jest.fn(),
     };
@@ -31,7 +34,7 @@ describe('/v1/product', () => {
 
       beforeAll(async () => {
         mockProductService.getProducts.mockResolvedValue(productsColletion);
-        result = await httpRequest.get('/v1/product').query({ title: 'test title' });
+        result = await httpRequest.get(endpoint).query({ title: 'test title' });
       });
 
       afterAll(() => {
@@ -57,7 +60,7 @@ describe('/v1/product', () => {
         mockProductService.getProducts.mockImplementation(() => {
           throw new Error('fake message error');
         });
-        result = await httpRequest.get('/v1/product');
+        result = await httpRequest.get(endpoint);
       });
 
       afterAll(() => {

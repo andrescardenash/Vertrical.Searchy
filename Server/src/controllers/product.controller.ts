@@ -7,7 +7,7 @@ const route = PromiseRouter();
 export const ProductController = (app: Router): void => {
   app.use('/v1', route);
 
-  route.get('/product', async (req: Request, res: Response) => {
+  route.get('/products', async (req: Request, res: Response) => {
     const productTitle = req.query && req.query.title ? (req.query.title as string) : '';
     const productService = new ProductService();
     const products = await productService.getProducts(productTitle);

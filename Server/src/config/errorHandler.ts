@@ -4,7 +4,6 @@ import { ApplicationErrorInterface } from '../interfaces/applicationError.interf
 type AnyError = ApplicationErrorInterface;
 
 const errorHandler = (err: AnyError, _req: Request, res: Response, next: NextFunction): void => {
-
   const error = {
     code: 'E0001',
     message: 'There is a problem with the application. If the error continues, contact Technical Support',

@@ -10,7 +10,7 @@ export default (app: express.Application): void => {
   app.use(
     cors({
       credentials: true,
-      origin: process.env.ACCESS_CONTROL_ALLOW_ORIGIN,
+      origin: process.env.ALLOWED_ORIGINS,
     })
   );
   app.use(routes());
