@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import { mocked } from 'jest-mock';
 import { Product } from '../../models/products.model';
 import { getProductRepository } from '../../repositories/product.repository';

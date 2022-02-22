@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2019",
     "lib": ["es2019", "esnext.asynciterable"],
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": ["./node_modules/@types"],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -16,7 +16,7 @@
     "noEmit": false,
     "esModuleInterop": true
   },
-  "include": ["./src/**/*", "tests/testApp.ts", "config/config.js"],
-  //comment this line to avoid visual errors in the unit tests.
-  "exclude": ["./node_modules", "./tests", "./**/__tests__/*", "./**/__mocks__/*"]
+  "include": ["./src/**/*"]
+  //Uncomment this line to exclude the test and node module folders in the build folder.
+  //"exclude": ["./node_modules", "./tests", "./**/__tests__/*", "./**/__mocks__/*"]
 }
