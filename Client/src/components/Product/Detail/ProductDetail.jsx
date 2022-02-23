@@ -29,7 +29,7 @@ const ProductDetail = () => {
         <Section title={product.title} />
         <div className="row">
           <div className="col-4">
-            <Photo photo={product.photo} title={product.title} />
+            <Photo id={product.id} photo={product.photo} title={product.title} />
           </div>
           <div className="col-8">
             <h5>Description.</h5>
