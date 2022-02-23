@@ -1,8 +1,23 @@
-import express from "express";
-const app = express();
-const port = 10000;
+import express from 'express';
+import { connectToDatabase } from './config/database/dbClient';
+import applyServerConfig from './config/server';
 
-app.listen( port, () => {
-    // tslint:disable-next-line:no-console
-    console.info( `server started at http://localhost:${ port }` );
-} );
+function startServer() {
+  connectToDatabase()
+    .then(async () => {
+      const app = express();
+      applyServerConfig(app);
+
+      app
+        .listen(process.env.PORT, () => {
+          console.log(`Server listening on port: ${process.env.PORT}`);
+        })
+        .on('error', err => {
+          console.error(err);
+          process.exit(1);
+        });
+    })
+    .catch(error => console.error('Data Access Error : %o', error));
+}
+
+startServer();
