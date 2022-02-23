@@ -4,7 +4,7 @@
 
 ## How to work in dev mode?
 
-1. copy `.env.example` as `.env` and customize variables according to this [section](#environment-variables-in-use:).
+1. copy `.env.example` as `.env` and customize variables according to environment variables section.
 2. run `npm install` at root level.
 3. run pending migration scripts executing the following command `npm run migration:run`.
 3. run `npm run start`.
