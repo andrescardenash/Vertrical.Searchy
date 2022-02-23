@@ -1,3 +1,7 @@
+## Prerequisites
+- Postgres database configured (v14+) to download the installer click [here](https://www.postgresql.org/download/)
+- Install node.js (LTS o v16+)  to download the installer click [here](https://nodejs.org/en/download/)
+
 ## How to work in dev mode?
 
 1. copy `.env.example` as `.env` and customize variables according to this [section](#environment-variables-in-use:).
